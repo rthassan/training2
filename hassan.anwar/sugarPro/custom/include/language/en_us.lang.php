@@ -71,3 +71,7 @@ $app_list_strings['ind_city_list']=array (
   0 => 'Mumbai',
   1 => 'New Delhi',
 );
+
+
+$app_list_strings['tax_list']=array (
+);

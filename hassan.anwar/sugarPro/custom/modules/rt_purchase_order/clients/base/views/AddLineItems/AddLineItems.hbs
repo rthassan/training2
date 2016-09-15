@@ -1,0 +1,111 @@
+<div>
+
+    
+        <div class="container">
+<h5>Line Items</h5>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Quantity</th>
+                <th>Product</th>
+                <th>Unit Price</th>
+                <th>Tax Class</th>
+                <th>Discount in %</th>
+                <th>Discount Amount/Unit</th>
+                <th>Discounted Price</th>
+                <th>
+                        <button id="new-item-add" class="btn btn-link" role="button" ><i class="fa fa-plus fa-md" style="margin-bottom:10px"></i></button>
+                  </th>
+              </tr>
+            </thead>
+            <tbody>
+                
+                {{#each lineitems.models}}
+
+                  <tr>
+                        <td style="width:20%">
+                            {{#with fields.quantity}}
+                                {{field ../../this model=../this template="edit"}}
+                            {{/with}}
+                        </td>
+                        <td style="width:30%">
+                            {{#with fields.product_template}}
+                                {{field ../../this model=../this template="edit"}}
+                            {{/with}}
+                        </td>
+                         <td style="width:30%">
+                            {{#with fields.unit_price}}
+                                {{field ../../this model=../this}}
+                            {{/with}}
+                        </td>
+                        <td style="width:30%">
+                            {{#with fields.tax_class}}
+                                {{field ../../this model=../this}}
+                            {{/with}}
+                        </td>
+                         <td style="width:30%">
+                            {{#with fields.discount_check}}
+                                {{field ../../this model=../this template="edit"}}
+                            {{/with}}
+                        </td>
+                         <td style="width:30%">
+                            {{#with fields.discount_amount}}
+                                {{field ../../this model=../this template="edit"}}
+                            {{/with}}
+                        </td>
+                         <td style="width:30%">
+                            {{#with fields.discount_price}}
+                                {{field ../../this model=../this}}
+                            {{/with}}
+                        </td>
+
+                        <td style="width:7%"><button id="item_{{@index}}" class="btn btn-link remove_item" role="button" ><i class="fa fa-minus fa-md"></i></button></td>
+                      </tr>
+                {{/each}}
+                <tr align="right">
+                <td></td><td></td><td></td><td></td><td></td>
+                <td align="right">
+                <b>Subtotal:&nbsp</b>
+                </td>
+                <td>
+                 ${{total}}
+                 </td>
+                </tr>
+
+                <tr align="right">
+                <td></td><td></td><td></td><td></td><td></td>
+                <td align="right">
+                <b>Discount:&nbsp</b>
+                </td>
+                <td>
+                 ${{discountless}}
+                 </td>
+                </tr>
+
+                <tr align="right">
+                <td></td><td></td><td></td><td></td><td></td>
+                <td align="right">
+                <b>Tax Amount:&nbsp</b>
+                </td>
+                <td>
+                 ${{tax}}
+                 </td>
+                </tr>
+
+                <tr align="right">
+                <td></td><td></td><td></td><td></td><td></td>
+                <td align="right">
+                <b>Total:&nbsp</b>
+                </td>
+                <td>
+                 ${{finaltotal}}
+                 </td>
+                </tr>
+
+            </tbody>
+          </table>
+          </div>
+
+
+</div>

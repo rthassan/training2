@@ -1,0 +1,15 @@
+<?php
+ // created: 2016-09-08 13:12:04
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['len']=26;
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['massupdate']=false;
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['importable']='false';
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['calculated']='true';
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['formula']='ifElse($discount_check,multiply( subtract($unit_price,multiply( $unit_price,divide( $discount_amount,100))),$quantity),multiply(subtract($unit_price,$discount_amount ),$quantity))';
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['enforced']=true;
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['related_fields']=array (
+  0 => 'currency_id',
+  1 => 'base_rate',
+);
+$dictionary['rt_purchase_line_item']['fields']['discount_price']['enable_range_search']=false;
+
+ ?>
